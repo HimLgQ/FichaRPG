@@ -5,7 +5,7 @@ const height = (canvas.height = 480);
 
 canvas.style.marginTop = window.innerHeight / 2 - height / 2 + "px";
 
-let health = 300;
+let health = 100;
 const healthBarWidth = 200;
 const healthBarHeight = 35;
 const x = 10;
@@ -17,7 +17,7 @@ const healthBar = new HealthBar(
     healthBarWidth,
     healthBarHeight,
     health,
-    "white"
+    "green"
 );
 
 const frame = function () {
