@@ -1,8 +1,19 @@
+html,
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: #000000;
+    color: white;
 }
 
-a {
-  color: #00B7FF;
+#canvas {
+    display: flex;
+    margin: 0 auto;
+}
+
+#vidaAtual,
+#vidaMaxima {
+    background: transparent;
+    color: white;
+    border-width: 0px;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
