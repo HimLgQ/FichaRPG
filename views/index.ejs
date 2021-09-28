@@ -5,8 +5,19 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <h1><%= title %></h1>
-    <button onclick="funcao('teste')">clique aqui</button>
+    <h1 id="Titulo"><%= title %></h1>
+    
+    <button onclick="RollD20()" id="RolarD20">
+        RollD20
+    </button>
+
+    <input type="text" 
+    id="inputPericia"
+    maxlength="2"
+    />
+    <p id="resultadoTexto">
+    </p>
     <script src="javascripts/index.js"></script>
+    <script src="javascripts/dadosPericias.js"></script>
   </body>
 </html>
