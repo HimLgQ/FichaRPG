@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon --inspect=9228 --ignore ./node_modules --ext js,ejs,json,css --exec babel-node --presets=@babel/preset-env ./bin/www"
+    "dev": "gulp development"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -20,6 +20,10 @@
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.5",
     "@babel/node": "^7.15.4",
-    "@babel/preset-env": "^7.15.6"
+    "@babel/preset-env": "^7.15.6",
+    "browser-sync": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-nodemon": "^2.5.0"
   }
 }
