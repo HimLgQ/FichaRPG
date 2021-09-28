@@ -1,6 +1,8 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import nodemon from 'gulp-nodemon';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const port = Number(process.env.PORT) || 3000;
 const browserOpts = {
@@ -15,7 +17,7 @@ gulp.task('development', () => {
     browserSync.init(browserOpts);
 
     return nodemon({
-        exec: 'babel-node --presets=@babel/preset-env ./bin/www.js',
+        exec: 'babel-node --presets=@babel/preset-env ./bin/www',
         inspect: '9228',
         ignore: './node_modules',
         ext: 'js,ejs,json,css'
