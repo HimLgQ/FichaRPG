@@ -1,6 +1,5 @@
 html,
 body {
-<<<<<<< HEAD
     background: #000000;
     color: white;
 }
@@ -17,41 +16,4 @@ body {
     border-width: 0px;
     border: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-=======
-  padding: 10px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #000000;
-}
-
-#Titulo{
-    color: rgb(255, 255, 255);
-}
-
-#resultadoTexto{
-    color:rgb(255, 255, 255);
-    width: fit-content;
-}
-
-#RolarD20{
-    background-color: #000000;
-    color:rgb(255, 255, 255);
-}
-
-#inputPericia{
-    background-color: #000000;
-    color:rgb(255, 255, 255);
-}
-#inputPericia[type=number]{
-    -moz-appearance: textfield;
-}
-#inputPericia::-webkit-outer-spin-button,
-#inputPericia::-webkit-inner-spin-button{
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-
-a {
-  color: #00B7FF;
->>>>>>> a94711d19bcf66c7e27e0515e641ee12a731436e
 }
