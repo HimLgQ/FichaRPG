@@ -8,20 +8,40 @@ body {
     color: rgb(255, 255, 255);
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
 #resultadoTexto{
     color:rgb(255, 255, 255);
     width: fit-content;
 }
 
-#RolarD20{
-    background-color: #000000;
-    color:rgb(255, 255, 255);
+#imagemPlayer{
+    display: flex;
+    justify-content: center;
+    
 }
 
-#inputPericia{
+#RolarD20{
+    display: flex;
+    justify-content: center;
+    
     background-color: #000000;
     color:rgb(255, 255, 255);
 }
+#inputPericia{
+    display: flex;
+    justify-content: center;
+    
+    background-color: #000000;
+    color:rgb(255, 255, 255);
+    width: 2%;
+}
+
 #inputPericia[type=number]{
     -moz-appearance: textfield;
 }
@@ -30,6 +50,7 @@ body {
     -webkit-appearance: none;
     margin: 0;
 }
+
 
 
 a {

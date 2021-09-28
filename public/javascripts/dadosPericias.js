@@ -30,11 +30,7 @@ function RollD20(){
     else{
         textoResultadoTeste = "Extremo"
     }
-    resultadoTexto.innerHTML += `<p> Dado: ${D20} Resultado: ${textoResultadoTeste}</p>`
-
-    if(resultadoTexto.children.length > 5){
-        resultadoTexto.children[0].remove()
-    }
+    resultadoTexto.innerHTML = `<p> Dado: ${D20} Resultado: ${textoResultadoTeste}</p>`
 
     if(valorInvalido == true){
         if(p < 0){
