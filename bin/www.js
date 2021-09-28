@@ -10,7 +10,7 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
-server.listen(port, () => console.log('Server running on port ' + port));
+server.listen(port, () => console.log('Server running http://localhost:' + port));
 server.on('error', onError);
 server.on('listening', onListening);
 
