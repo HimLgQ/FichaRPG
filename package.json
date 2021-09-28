@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon --inspect=9228 --ignore ./node_modules --ext js,ejs,json,css --exec babel-node --presets='@babel/preset-env' ./bin/www"
+    "dev": "nodemon --inspect=9228 --ignore ./node_modules --ext js,ejs,json,css --exec babel-node --presets=@babel/preset-env ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
