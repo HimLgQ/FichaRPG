@@ -7,7 +7,7 @@ class HealthBar {
         this.maxHealth = maxHealth;
         this.maxWidth = w;
         this.health = maxHealth;
-        this.color = color;
+        this.color = color; 
     }
 
     show(context) {
@@ -18,7 +18,7 @@ class HealthBar {
         context.strokeRect(this.x, this.y, this.maxWidth, this.h);
     }
 
-    updateHealth(vidaAtual,vidaMaxima) {
+    updateHealth(vidaAtual, vidaMaxima) {
         this.health = vidaAtual;
         this.maxHealth = vidaMaxima;
         this.w = (this.health / this.maxHealth) * this.maxWidth;
