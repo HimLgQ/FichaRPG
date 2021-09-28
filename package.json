@@ -1,0 +1,25 @@
+{
+  "name": "ficharpg",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --inspect=9228 --ignore ./node_modules --ext js,ejs,json,css --exec babel-node --presets='@babel/preset-env' ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mime-types": "^2.1.32",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.13"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6"
+  }
+}
