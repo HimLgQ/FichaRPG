@@ -17,3 +17,50 @@ body {
     border: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#resultadoTexto{
+    color:rgb(255, 255, 255);
+    width: fit-content;
+}
+
+#imagemPlayer{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#RolarD20{
+    display: flex;
+    justify-content: center;
+    
+    background-color: #000000;
+    color:rgb(255, 255, 255);
+}
+#inputPericia{
+    display: flex;
+    justify-content: center;
+    
+    background-color: #000000;
+    color:rgb(255, 255, 255);
+    width: 2%;
+}
+
+#inputPericia[type=number]{
+    -moz-appearance: textfield;
+}
+#inputPericia::-webkit-outer-spin-button,
+#inputPericia::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+a {
+  color: #00B7FF;
+}
