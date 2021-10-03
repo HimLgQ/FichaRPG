@@ -25,51 +25,20 @@
         <link rel="stylesheet" href="/stylesheets/style.css" />
     </head>
     <body>
-        <div id="statusBar">
-            <canvas id="canvas"></canvas>
 
-            <input
-                type="text"
-                id="vidaAtual"
-                maxlength="3"
-                onchange="mudarVida()"
-                value="100"
-                style="width: 30px"
-                onkeyup="this.value=this.value.replace(/\D/,'')"
-            />
-            <input
-                type="text"
-                id="vidaMaxima"
-                maxlength="3"
-                onchange="mudarVida()"
-                value="100"
-                style="width: 30px"
-                onkeyup="this.value=this.value.replace(/\D/,'')"
-            />
-        </div>
+        <button 
+        onclick="RollD20()" 
+        id="RolarD20">RollD20
+        </button>
 
-        <input type="text" id="inputPericia" maxlength="2" />
-        <p id="resultadoTexto"></p>
-        <div class="flex-container" id="teste1">
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-            <img src="images/Esqueleto.png" id="imagemPlayer" />
-        </div>
-        <button onclick="RollD20()" id="RolarD20">RollD20</button>
-        <input type="text" id="inputPericia" maxlength="2" />
+        <input 
+        type="text" 
+        id="inputPericia" 
+        maxlength="2" 
+        onkeyup="this.value=this.value.replace(/\D/,'')"/>
+
         <p id="resultadoTexto"></p>
 
-        <script src="javascripts/healthbar.js"></script>
-        <script src="javascripts/index.js"></script>
         <script src="javascripts/dadosPericias.js"></script>
     </body>
 </html>

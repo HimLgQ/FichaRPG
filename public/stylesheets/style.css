@@ -1,49 +1,12 @@
 html,
 body {
     background: #000000;
-    color: white;
-}
-
-/* #teste {
-    display: block;
-    margin: 0 auto;
-    border: 2px solid rgb(255, 255, 255);
-} */
-#canvas{
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-#vidaAtual,
-#vidaMaxima {
-    background: transparent;
-    color: white;
-    border-width: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 30px;
-    height: 30px;
-    margin-top: 465px;
-}
-#statusBar {
-    display: flex;
-}
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
+    color: red;
 }
 
 #resultadoTexto {
     color: rgb(255, 255, 255);
     width: fit-content;
-}
-
-#imagemPlayer {
-    display: flex;
-    justify-content: center;
 }
 
 #RolarD20 {
@@ -53,6 +16,7 @@ body {
     background-color: #000000;
     color: rgb(255, 255, 255);
 }
+
 #inputPericia {
     display: flex;
     justify-content: center;
@@ -71,6 +35,4 @@ body {
     margin: 0;
 }
 
-a {
-    color: #00b7ff;
-}
+

@@ -7,7 +7,7 @@ class HealthBar {
         this.maxHealth = maxHealth;
         this.maxWidth = w;
         this.health = maxHealth;
-        this.color = color; 
+        this.color = color;
     }
 
     show(context) {
