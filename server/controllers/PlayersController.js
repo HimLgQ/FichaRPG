@@ -30,7 +30,7 @@ export default class PlayersController {
 
     async getByName(req, res) {
         try {
-            const player = await Player.findOne({ name: req.params.name })
+            const player = await Player.findOne({ nome: req.params.name })
             res.status(201).json(player)
         } catch (err) {
             handleError(err, res)
