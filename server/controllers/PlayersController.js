@@ -18,4 +18,22 @@ export default class PlayersController {
             handleError(err, res)
         }
     }
+
+    async getAll(req, res) {
+        try {
+            const players = await Player.find()
+            res.status(201).json(players)
+        } catch (err) {
+            handleError(err, res)
+        }
+    }
+
+    async getByName(req, res) {
+        try {
+            const player = await Player.findOne({ name: req.params.name })
+            res.status(201).json(player)
+        } catch (err) {
+            handleError(err, res)
+        }
+    }
 }

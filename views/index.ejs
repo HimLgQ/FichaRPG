@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><%= title %></title>
+        <% players.forEach((player) => { %>
+            <% Object.entries(player).forEach(([key, value]) => { %>
+                <% if (typeof value === 'object') { %>
+                    <h3><%= key %></h3>
+                    <% Object.entries(value).forEach(([key, value]) => { %>
+                        <% if (typeof value === 'object') { %>
+                            <h3><%= key %></h3>
+                            <% Object.entries(value).forEach(([key, value]) => { %>
+                                <% console.log(key, value) %> 
+                                <h3><%= key %></h3><h4><%= value %></h4>
+                            <% }); %>
+                        <% } else { %>
+                            <h3><%= key %></h3><h4><%= value %></h4>
+                        <% } %>
+                    <% }); %>
+                <% } else if (key !== "__v" && key !== "_id") { %>
+                    <h3><%= key %></h3><h4><%= value %></h4>
+                <% } %>
+            <% }); %>
+        <% }); %>
+        <!-- mano ignora isto acima por favor -->
         <link rel="stylesheet" href="/stylesheets/style.css" />
     </head>
     <body>

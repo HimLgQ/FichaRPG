@@ -3,9 +3,8 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import connectToDB from './db'
-
-import indexRouter from './routes/index';
+import router from './router';
+import connectToDB from './server/db'
 
 const app = express();
 
@@ -19,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', router);
 
 app.use(function(req, res, next) {
   next(createError(404));
