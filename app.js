@@ -3,6 +3,7 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import connectToDB from './db'
 
 import indexRouter from './routes/index';
 
@@ -34,5 +35,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+connectToDB();
 
 export default app;
