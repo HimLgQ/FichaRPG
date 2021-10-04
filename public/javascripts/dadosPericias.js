@@ -1,7 +1,7 @@
 function RollD20() {
     try {
-        let textoResultadoTeste
-        let valorInvalido
+        textoResultadoTeste,
+        valorInvalido;
         const resultadoTexto = document.getElementById("resultadoTexto")
 
         const D20 = Math.floor(Math.random() * 20 + 1)
@@ -10,21 +10,21 @@ function RollD20() {
         const bom = [0, 20, 20, 18, 18, 17, 17, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 11, 11];
         const extremo = [0, 0, 0, 20, 20, 20, 19, 19, 19, 19, 18, 18, 18, 18, 17, 17, 17, 17, 16];
 
-        const p = inputPericia.value
+        const pericia = inputPericia.value
 
-        if (p < 1 || p > 19) {
+        if (pericia < 1 || pericia > 19) {
             valorInvalido = true
         }
 
-        if (D20 < normal[p - 1]) {
+        if (D20 < normal[pericia - 1]) {
             textoResultadoTeste = "Falha"
         }
 
-        else if (D20 < bom[p - 1]) {
+        else if (D20 < bom[pericia - 1]) {
             textoResultadoTeste = "Normal"
         }
 
-        else if (D20 < extremo[p - 1]) {
+        else if (D20 < extremo[pericia - 1]) {
             textoResultadoTeste = "Bom"
         }
 
@@ -37,39 +37,25 @@ function RollD20() {
         }
 
         if (valorInvalido) {
-            if (p < 0) {
+            if (pericia < 0) {
                 resultadoTexto.innerHTML = "Valor deve ser maior que 1"
             }
 
-            if (p == 0) {
+            if (pericia == 0) {
                 resultadoTexto.innerHTML = "Deve digitar um número"
             }
 
-            if (p > 19) {
+            if (pericia > 19) {
                 resultadoTexto.innerHTML = "Valor deve ser menor que 20"
             }
         } else {
             resultadoTexto.innerHTML = `<p> Dado: ${D20} Resultado: ${textoResultadoTeste}</p>`
-            const update = {
-                pericias: {
-                    [getValue("classePericia")]: {
-                        [getValue("nomePericia")]: D20
-                    }
-                }
-            }
-            axios.patch(`/api/players/${getValue("nomePlayer")}`, update)
-                .then(res => {
-                    if (res.status !== 200)
-                        return alert(res.data)
-                    console.log(res)
-                })
-                .catch(err => alert(err.response.data))
         }
     } catch (error) {
         console.log(error)
     }
 }
 
-const getValue = (id) => {
-    return document.getElementById(id).value
-}
+
+
+
