@@ -23,22 +23,44 @@
         <link rel="stylesheet" href="/stylesheets/style.css" />
     </head>
     <body>
-        <button onclick="RollD20()" id="RolarD20">RollD20</button>
+        <input type="text" id="nomePlayer" value="comando" />
+        <dl id="fisico" class="classePericia">
+            <dt>
+                <input
+                    type="text"
+                    name="briga"
+                    id="inputBriga"
+                    maxlength="2"
+                    value="18"
+                    onkeyup="this.value=this.value.replace(/\D/,'')"
+                />
+                <button
+                    onclick="RollD20(this.name)"
+                    name="briga"
+                    id="buttonBriga">
+                    Briga
+                </button>
+            </dt>
+        </dl>
 
-        <input
-            type="text"
-            id="inputPericia"
-            maxlength="2"
-            onkeyup="this.value=this.value.replace(/\D/,'')"
-        />
+        <!-- <dl id="ciencias" class="classePericia">
+            <dt>
 
-        <input type="text" id="nomePlayer" placeholder="nomePlayer"/>
-        <input type="text" id="classePericia" placeholder="classePericia"/>
-        <input type="text" id="nomePericia" placeholder="nomePericia"/>
+            </dt>
+        </dl> -->
 
         <p id="resultadoTexto"></p>
-
+        <script src="javascripts/helpers.js"></script>
         <script src="javascripts/dadosPericias.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            // function getValueAtStart() {
+            //     const classesPericias =
+            //         document.getElementsByClassName("classePericia");
+            //     for (let classePericia of classesPericias) {
+            //         players[getValue("nomePlayer")].pericias[classePericia.id];
+            //     }
+            // };
+        </script>
     </body>
 </html>
