@@ -1,6 +1,8 @@
 import Player from '../models/player'
+import _ from 'lodash';
 
 const handleError = (err, res) => {
+    console.log(err)
     if (err.name === "ValidationError")
         res.status(400).send(err.message)
     else if (err.code === 11000)
@@ -22,7 +24,7 @@ export default class PlayersController {
     async getAll(req, res) {
         try {
             const players = await Player.find()
-            res.status(201).json(players)
+            res.status(200).json(players)
         } catch (err) {
             handleError(err, res)
         }
@@ -31,7 +33,7 @@ export default class PlayersController {
     async getByName(req, res) {
         try {
             const player = await Player.findOne({ nome: req.params.name })
-            res.status(201).json(player)
+            res.status(200).json(player)
         } catch (err) {
             handleError(err, res)
         }
@@ -39,8 +41,16 @@ export default class PlayersController {
 
     async updateByName(req, res) {
         try {
-            const player = await Player.updateOne({ nome: req.params.name }, { ...req.body })
-            res.status(201).json(player)
+            const player = await Player.findOne({ nome: req.params.name })
+            const changes = { $set: _.merge(player, req.body) }
+            const update = await Player.updateOne({ nome: req.params.name }, changes, { new: true })
+            console.log(update)
+            if (!update || !update?.matchedCount)
+                res.status(404).send("Jogador não encontrado")
+            else if (!update?.modifiedCount)
+                res.status(202).send("Campo não modificado ou não encontrado")
+            else
+                res.status(200).json(update)
         } catch (err) {
             handleError(err, res)
         }
