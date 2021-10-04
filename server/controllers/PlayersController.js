@@ -36,4 +36,13 @@ export default class PlayersController {
             handleError(err, res)
         }
     }
+
+    async updateByName(req, res) {
+        try {
+            const player = await Player.updateOne({ nome: req.params.name }, { ...req.body })
+            res.status(201).json(player)
+        } catch (err) {
+            handleError(err, res)
+        }
+    }
 }
