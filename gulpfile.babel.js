@@ -12,6 +12,7 @@ const browserOpts = {
 };
 
 gulp.task('development', () => {
+    const reload = process.env.RELOAD === 'true';
     let restarted = false;
     browserSync.create();
     browserSync.init(browserOpts);
@@ -23,7 +24,7 @@ gulp.task('development', () => {
         ext: 'js,ejs,json,css'
     })
     .on('start', () => {
-        if (restarted) {
+        if (restarted && reload) {
             setTimeout(() => {
                 browserSync.reload();
             }, 1000);

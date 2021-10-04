@@ -23,20 +23,22 @@
         <link rel="stylesheet" href="/stylesheets/style.css" />
     </head>
     <body>
+        <button onclick="RollD20()" id="RolarD20">RollD20</button>
 
-        <button 
-        onclick="RollD20()" 
-        id="RolarD20">RollD20
-        </button>
+        <input
+            type="text"
+            id="inputPericia"
+            maxlength="2"
+            onkeyup="this.value=this.value.replace(/\D/,'')"
+        />
 
-        <input 
-        type="text" 
-        id="inputPericia" 
-        maxlength="2" 
-        onkeyup="this.value=this.value.replace(/\D/,'')"/>
+        <input type="text" id="nomePlayer" placeholder="nomePlayer"/>
+        <input type="text" id="classePericia" placeholder="classePericia"/>
+        <input type="text" id="nomePericia" placeholder="nomePericia"/>
 
         <p id="resultadoTexto"></p>
 
         <script src="javascripts/dadosPericias.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </body>
 </html>

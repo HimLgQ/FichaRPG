@@ -14,12 +14,12 @@ const PlayerSchema = new Schema({
             saltar: { type: Number, default: 1, required: true, min: 1, max: 19 }
         },
         ciencias: {
-            arquelogia: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            arqueologia: { type: Number, default: 1, required: true, min: 1, max: 19 },
             astronomia: { type: Number, default: 1, required: true, min: 1, max: 19 },
             biologia: { type: Number, default: 1, required: true, min: 1, max: 19 },
             quimica: { type: Number, default: 1, required: true, min: 1, max: 19 },
             farmacia: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            analisarEspecia: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            analisarEspecie: { type: Number, default: 1, required: true, min: 1, max: 19 },
             medicina: { type: Number, default: 1, required: true, min: 1, max: 19 }
         },
         geral: {
@@ -33,10 +33,10 @@ const PlayerSchema = new Schema({
         tecnologia: {
             tecnologiaCultural: { type: Number, default: 1, required: true, min: 1, max: 19 },
             craft: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            craft: { type: Number, default: 1, required: true, min: 1, max: 19 },
             navegacao: { type: Number, default: 1, required: true, min: 1, max: 19 },
             repEletrica: { type: Number, default: 1, required: true, min: 1, max: 19 },
             repMecanica: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            lockpick: { type: Number, default: 1, required: true, min: 1, max: 19 },
         },
         sociais: {
             barganha: { type: Number, default: 1, required: true, min: 1, max: 19 },

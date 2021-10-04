@@ -6,10 +6,10 @@ const players = new PlayersController();
 
 playersRouter.post('/', players.create);
 
-playersRouter.patch('/:name', players.updateByName);
-
 playersRouter.get('/', players.getAll);
 
 playersRouter.get('/:name', players.getByName);
+
+playersRouter.patch('/:name', players.updateByName);
 
 export default playersRouter;
