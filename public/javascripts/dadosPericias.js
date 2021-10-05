@@ -1,7 +1,7 @@
-function RollD20() {
+function RollD20(nomePericia) {
     try {
-        textoResultadoTeste,
-        valorInvalido;
+        let textoResultadoTeste,
+            valorInvalido;
         const resultadoTexto = document.getElementById("resultadoTexto")
 
         const D20 = Math.floor(Math.random() * 20 + 1)
@@ -10,7 +10,7 @@ function RollD20() {
         const bom = [0, 20, 20, 18, 18, 17, 17, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 11, 11];
         const extremo = [0, 0, 0, 20, 20, 20, 19, 19, 19, 19, 18, 18, 18, 18, 17, 17, 17, 17, 16];
 
-        const pericia = inputPericia.value
+        const pericia = getValueById('input' + nomePericia);
 
         if (pericia < 1 || pericia > 19) {
             valorInvalido = true
@@ -55,7 +55,3 @@ function RollD20() {
         console.log(error)
     }
 }
-
-
-
-

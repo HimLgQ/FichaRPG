@@ -1,66 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- <% players.forEach((player) => { %>
-            <% Object.entries(player).forEach(([key, value]) => { %>
-                <% if (typeof value === 'object') { %>
-                    <h3><%= key %></h3>
-                    <% Object.entries(value).forEach(([key, value]) => { %>
-                        <% if (typeof value === 'object') { %>
-                            <h3><%= key %></h3>
-                            <% Object.entries(value).forEach(([key, value]) => { %>
-                                <h3><%= key %></h3><h4><%= value %></h4>
-                            <% }); %>
-                        <% } else { %>
-                            <h3><%= key %></h3><h4><%= value %></h4>
-                        <% } %>
-                    <% }); %>
-                <% } else if (key !== "__v" && key !== "_id") { %>
-                    <h3><%= key %></h3><h4><%= value %></h4>
-                <% } %>
-            <% }); %>
-        <% }); %> -->
         <link rel="stylesheet" href="/stylesheets/style.css" />
     </head>
     <body>
-        <input type="text" id="nomePlayer" value="comando" />
-        <dl id="fisico" class="classePericia">
-            <dt>
-                <input
-                    type="text"
-                    name="briga"
-                    id="inputBriga"
-                    maxlength="2"
-                    value="18"
-                    onkeyup="this.value=this.value.replace(/\D/,'')"
-                />
-                <button
-                    onclick="RollD20(this.name)"
-                    name="briga"
-                    id="buttonBriga">
-                    Briga
-                </button>
-            </dt>
-        </dl>
-
-        <!-- <dl id="ciencias" class="classePericia">
-            <dt>
-
-            </dt>
-        </dl> -->
+        <!-- <input type="text" id="nomePlayer" value="comando" /> -->
+        <% players.forEach((player) => { %>
+            <h4><%= player.nome %></h4>
+            <% Object.values(player.pericias).forEach((classePericia) => { %>
+            <dl id="<%= classePericia.nome %>" class="classePericia">
+                <% Object.entries(classePericia).forEach(([pericia, valor]) => { %>
+                    <dt>
+                        <input
+                            type="text"
+                            name=<%= pericia %>
+                            id="input<%= pericia %>"
+                            maxlength="2"
+                            value=<%= valor %>
+                            onkeyup="this.value=this.value.replace(/\D/,'')"
+                        />
+                        <button
+                            onclick="RollD20(this.name)"
+                            name=<%= pericia %>
+                            id="button<%= pericia %>">
+                            <%= pericia.replace(/([A-Z]+)/g, " $1").replace(/([A-Z][a-z])/g, " $1") //camelCase para Title Case %>
+                        </button>
+                    </dt>
+                <% }); %>
+            </dl>
+            <% }); %>
+        <% }); %>
 
         <p id="resultadoTexto"></p>
         <script src="javascripts/helpers.js"></script>
         <script src="javascripts/dadosPericias.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script>
-            // function getValueAtStart() {
-            //     const classesPericias =
-            //         document.getElementsByClassName("classePericia");
-            //     for (let classePericia of classesPericias) {
-            //         players[getValue("nomePlayer")].pericias[classePericia.id];
-            //     }
-            // };
-        </script>
     </body>
 </html>

@@ -1,3 +1,3 @@
-const getValue = (id) => {
+const getValueById = (id) => {
     return document.getElementById(id).value
 }
