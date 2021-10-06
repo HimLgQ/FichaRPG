@@ -1,111 +1,111 @@
 import mongoose, { Schema } from 'mongoose';
 
 const PlayerSchema = new Schema({
-    nome: { type: String, required: true, trim: true, unique: true },
-    raca: { type: String, required: true, trim: true },
-    pericias: {
-        fisico: {
-            arremessar: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            briga: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            escalar: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            esquivar: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            furtividade: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            nadar: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            saltar: { type: Number, default: 1, required: true, min: 1, max: 19 }
+    Nome: { type: String, required: true, trim: true, unique: true },
+    Raça: { type: String, required: true, trim: true },
+    Perícias: {
+        Físico: {
+            Arremessar: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Briga: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Escalar: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Esquivar: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Furtividade: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Nadar: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Saltar: { type: Number, default: 1, required: true, min: 1, max: 19 },
         },
-        ciencias: {
-            arqueologia: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            astronomia: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            biologia: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            quimica: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            farmacia: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            analisarEspecie: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            medicina: { type: Number, default: 1, required: true, min: 1, max: 19 }
+        Ciências: {
+            Arqueologia: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Astronomia: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Biologia: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Química: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Farmácia: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            'Analisar Espécie': { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Medicina: { type: Number, default: 1, required: true, min: 1, max: 19 },
         },
-        geral: {
-            artes: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            cultura: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            politica: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            financas: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            historia: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            lingua: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        Geral: {
+            Artes: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Cultura: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Política: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Finanças: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            História: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Línguas: { type: Number, default: 1, required: true, min: 1, max: 19 },
         },
-        tecnologia: {
-            tecnologiaCultural: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            craft: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            navegacao: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            repEletrica: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            repMecanica: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            lockpick: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        Tecnologia: {
+            'Tecnologia Cultural': { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Craft: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Navegação: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            'Reparação Elétrica': { type: Number, default: 1, required: true, min: 1, max: 19 },
+            'Reparação Mecânica': { type: Number, default: 1, required: true, min: 1, max: 19 },
+            LockPick: { type: Number, default: 1, required: true, min: 1, max: 19 },
         },
-        sociais: {
-            barganha: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            intimidar: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            labia: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            persuasao: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            psicologia: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            charme: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        Sociais: {
+            Barganha: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Intimidar: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Lábia: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Persuasão: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Psicologia: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Charme: { type: Number, default: 1, required: true, min: 1, max: 19 },
         },
-        armas: {
-            corpoACorpo: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            pistolas: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            riflesDeAssalto: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            snipers: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            shotguns: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        Armas: {
+            'Corpo a Corpo': { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Pistolas: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            'Rifles de Assalto': { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Snipers: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Shotguns: { type: Number, default: 1, required: true, min: 1, max: 19 },
         },
-        percepcao: {
-            intuicao: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            escutar: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            encontrar: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        Percepção: {
+            Intuição: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Escutar: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            Encontrar: { type: Number, default: 1, required: true, min: 1, max: 19 },
         },
-        atributos: {
-            for: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            con: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            des: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            int: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            tam: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            pow: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            apa: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            sor: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        Atributos: {
+            FOR: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            CON: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            DES: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            INT: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            TAM: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            POW: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            APA: { type: Number, default: 1, required: true, min: 1, max: 19 },
+            SOR: { type: Number, default: 1, required: true, min: 1, max: 19 },
         }
     },
-    resistencias: {
-        perfurante: { type: Number, default: 0, required: true },
-        corte: { type: Number, default: 0, required: true },
-        brusco: { type: Number, default: 0, required: true },
-        elemental: { type: Number, default: 0, required: true },
-        veneno: { type: Number, default: 0, required: true },
-        morte: { type: Number, default: 0, required: true },
-        magia: { type: Number, default: 0, required: true },
+    Resistências: {
+        Perfurante: { type: Number, default: 0, required: true },
+        Corte: { type: Number, default: 0, required: true },
+        Brusco: { type: Number, default: 0, required: true },
+        Elemental: { type: Number, default: 0, required: true },
+        Veneno: { type: Number, default: 0, required: true },
+        Morte: { type: Number, default: 0, required: true },
+        Magia: { type: Number, default: 0, required: true },
     },
-    status:
+    Status:
     {
-        vidaAtual: { type: Number, default: 0, required: true, min: 0, max: 999 },
-        vidaMaxima: { type: Number, default: 0, required: true, min: 0, max: 999 },
-        sanidadeAtual: { type: Number, default: 0, required: true, min: 0, max: 999 },
-        sanidadeMaxima: { type: Number, default: 0, required: true, min: 0, max: 999 },
-        magiaAtual: { type: Number, default: 0, required: true, min: 0, max: 999 },
-        magiaMaxima: { type: Number, default: 0, required: true, min: 0, max: 999 },
-        fadigaAtual: { type: Number, default: 0, min: 0, max: 999 },
-        fadigaMaxima: { type: Number, default: 0, min: 0, max: 999 },
+        'Vida Atual': { type: Number, default: 0, required: true, min: 0, max: 999 },
+        'Vida Máxima': { type: Number, default: 0, required: true, min: 0, max: 999 },
+        'Sanidade Atual': { type: Number, default: 0, required: true, min: 0, max: 999 },
+        'Sanidade Máxima': { type: Number, default: 0, required: true, min: 0, max: 999 },
+        'Magia Atual': { type: Number, default: 0, required: true, min: 0, max: 999 },
+        'Magia Máxima': { type: Number, default: 0, required: true, min: 0, max: 999 },
+        'Fadiga Atual': { type: Number, default: 0, min: 0, max: 999 },
+        'Fadiga Máxima': { type: Number, default: 0, min: 0, max: 999 },
     },
-    anotacoes: { type: String, default: ' ', required: true },
-    lins: { type: Number, default: 0, required: true },
-    conexoes: { type: [String], default: [], required: true },
-    habilidades: [
+    Anotações: { type: String, default: ' ', required: true },
+    Lins: { type: Number, default: 0, required: true },
+    Conexões: { type: [String], default: [], required: true },
+    Habilidades: [
         {
-            nome: { type: String, required: true },
-            descricao: { type: String, required: true }
+            'Nome da Habilidade': { type: String, required: true },
+            Descrição: { type: String, required: true },
         }
     ],
-    itens: {
+    Itens: {
         type: [{
-            id: { type: [Schema.Types.ObjectId], required: true },
-            quantidade: { type: [Number], default: 1, min: 1, required: true },
+            ID: { type: [Schema.Types.ObjectId], required: true },
+            Quantidade: { type: [Number], default: 1, min: 1, required: true },
         }], default: []
     }
 });
 
-const Player = mongoose.model('Player', PlayerSchema, "players");
+const Player = mongoose.model('Player', PlayerSchema, 'players');
 
 export default Player;
