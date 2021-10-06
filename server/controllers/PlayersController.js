@@ -26,7 +26,7 @@ export default class PlayersController {
                 const player_ = new Player(player);
                 return player_.toObject({ virtuals: true });
             });
-            console.log(result);
+            // console.log(result);
             res.status(200).json(result);
         } catch (err) {
             handleError(err, res);
@@ -44,7 +44,7 @@ export default class PlayersController {
 
     async updateByName(req, res) {
         try {
-            console.log(req.body)
+            // console.log(req.body)
             const player = await Player.findOne({ nome: req.params.name });
             const changes = { $set: _.merge(player, req.body) };
             const update = await Player.updateOne(

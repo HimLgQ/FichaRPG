@@ -4,22 +4,33 @@ body {
     color: red;
 }
 
-
-
 #resultadoTexto {
     color: rgb(255, 255, 255);
     width: fit-content;
 }
 
-.tituloPericia{
+.tituloPericia {
     font-size: 15px;
     color: white;
 }
 
-.classePericia{
+.classePericia {
     background-color: black;
     color: white;
-    
+    margin-right: auto;
+    margin-left: auto;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
 
+.valorPericia {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+dt {
+    display: flex;
+}

@@ -4,33 +4,39 @@
         <link rel="stylesheet" href="/stylesheets/style.css" />
     </head>
     <body>
-        <!-- <input type="text" id="nomePlayer" value="comando" /> -->
+        <center id="resultadoTexto"></center>
         <% players.forEach((player) => { %>
-            <h4><%= player.Nome %></h4>
+        <center><%= player.Nome %></center>
+        <div class="grid-container">
             <% Object.entries(player.Perícias).forEach(([classePericia, nomesPericias]) => { %>
-                <dl id="<%= classePericia %>" class="classePericia">
-                    <h5 class="tituloPericia"><%= classePericia %></h5>
+            <dl id="<%= classePericia %>" class="classePericia">
+                <h5 class="tituloPericia"><%= classePericia %></h5>
                 <% Object.entries(nomesPericias).forEach(([pericia, valor]) => { %>
-                    <dt>
-                        <button onclick='mudarValorPericia(this, "<%= player.Nome %>", "<%= classePericia %>", "<%= pericia %>", -1)'>
-                            -
-                        </button>
-                        <button onclick='mudarValorPericia(this, "<%= player.Nome %>", "<%= classePericia %>", "<%= pericia %>", 1)'>
-                            + 
-                        </button>
-                        <p id="<%= pericia %>"><%= valor %></p>
-                        <button
-                            onclick="RollD20(this.name)"
-                            id="button<%= pericia %>">
-                            <%= pericia %>
-                        </button>
-                    </dt>
-                <% }); %>
+                <dt>
+                    <br/>
+                    <button
+                        onclick='mudarValorPericia(this, "<%= player.Nome %>", "<%= classePericia %>", "<%= pericia %>", -1)'
+                    >
+                        -
+                    </button>
+                    <button
+                        onclick='mudarValorPericia(this, "<%= player.Nome %>", "<%= classePericia %>", "<%= pericia %>", 1)'
+                    >
+                        +
+                    </button>
+                    <p class="periciaValue"" id="<%= pericia %>"><%= valor %></p>
+                    <button
+                        onclick="RollD20(this.name)"
+                        name="<%= pericia %>"
+                        id="button<%= pericia %>"
+                    >
+                        <%= pericia %>
+                    </button>
+                    <% }) %>
+                </dt>
             </dl>
-            <% }); %>
-        <% }); %>
-
-        <p id="resultadoTexto"></p>
+            <% }); %> <% }); %>
+        </div>
         <script src="javascripts/updatePericias.js"></script>
         <script src="javascripts/dadosPericias.js"></script>
         <script src="javascripts/helpers.js"></script>

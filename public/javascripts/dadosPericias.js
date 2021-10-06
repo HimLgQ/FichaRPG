@@ -10,7 +10,7 @@ function RollD20(nomePericia) {
         const bom = [0, 20, 20, 18, 18, 17, 17, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 11, 11];
         const extremo = [0, 0, 0, 20, 20, 20, 19, 19, 19, 19, 18, 18, 18, 18, 17, 17, 17, 17, 16];
 
-        const pericia = getValueById('input' + nomePericia);
+        const pericia = getTextById(nomePericia);
 
         if (pericia < 1 || pericia > 19) {
             valorInvalido = true
@@ -49,7 +49,7 @@ function RollD20(nomePericia) {
                 resultadoTexto.innerHTML = "Valor deve ser menor que 20"
             }
         } else {
-            resultadoTexto.innerHTML = `<p> Dado: ${D20} Resultado: ${textoResultadoTeste}</p>`
+            resultadoTexto.innerHTML = `Dado: ${D20} Resultado: ${textoResultadoTeste}`
         }
     } catch (error) {
         console.log(error)
