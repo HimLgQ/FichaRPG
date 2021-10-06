@@ -4,35 +4,22 @@ body {
     color: red;
 }
 
+
+
 #resultadoTexto {
     color: rgb(255, 255, 255);
     width: fit-content;
 }
 
-#buttonBriga {
-    display: flex;
-    justify-content: center;
-
-    background-color: #000000;
-    color: rgb(255, 255, 255);
+.tituloPericia{
+    font-size: 15px;
+    color: white;
 }
 
-#inputBriga {
-    display: flex;
-    justify-content: center;
-
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-    width: 2%;
-}
-
-#inputBriga[type="number"] {
-    -moz-appearance: textfield;
-}
-#inputBriga::-webkit-outer-spin-button,
-#inputBriga::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.classePericia{
+    background-color: black;
+    color: white;
+    
 }
 
 

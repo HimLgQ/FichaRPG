@@ -6,24 +6,23 @@
     <body>
         <!-- <input type="text" id="nomePlayer" value="comando" /> -->
         <% players.forEach((player) => { %>
-            <h4><%= player.nome %></h4>
-            <% Object.values(player.pericias).forEach((classePericia) => { %>
-            <dl id="<%= classePericia.nome %>" class="classePericia">
-                <% Object.entries(classePericia).forEach(([pericia, valor]) => { %>
+            <h4><%= player.Nome %></h4>
+            <% Object.entries(player.Perícias).forEach(([classePericia, nomesPericias]) => { %>
+                <dl id="<%= classePericia %>" class="classePericia">
+                    <h5 class="tituloPericia"><%= classePericia %></h5>
+                <% Object.entries(nomesPericias).forEach(([pericia, valor]) => { %>
                     <dt>
-                        <input
-                            type="text"
-                            name=<%= pericia %>
-                            id="input<%= pericia %>"
-                            maxlength="2"
-                            value=<%= valor %>
-                            onkeyup="this.value=this.value.replace(/\D/,'')"
-                        />
+                        <button onclick='mudarValorPericia(this, "<%= player.Nome %>", "<%= classePericia %>", "<%= pericia %>", -1)'>
+                            -
+                        </button>
+                        <button onclick='mudarValorPericia(this, "<%= player.Nome %>", "<%= classePericia %>", "<%= pericia %>", 1)'>
+                            + 
+                        </button>
+                        <p id="<%= pericia %>"><%= valor %></p>
                         <button
                             onclick="RollD20(this.name)"
-                            name=<%= pericia %>
                             id="button<%= pericia %>">
-                            <%= pericia.replace(/([A-Z]+)/g, " $1").replace(/([A-Z][a-z])/g, " $1") //camelCase para Title Case %>
+                            <%= pericia %>
                         </button>
                     </dt>
                 <% }); %>
@@ -32,8 +31,9 @@
         <% }); %>
 
         <p id="resultadoTexto"></p>
-        <script src="javascripts/helpers.js"></script>
+        <script src="javascripts/updatePericias.js"></script>
         <script src="javascripts/dadosPericias.js"></script>
+        <script src="javascripts/helpers.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </body>
 </html>
