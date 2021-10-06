@@ -57,17 +57,17 @@ const PlayerSchema = new Schema({
             Intuição: { type: Number, default: 1, required: true, min: 1, max: 19 },
             Escutar: { type: Number, default: 1, required: true, min: 1, max: 19 },
             Encontrar: { type: Number, default: 1, required: true, min: 1, max: 19 },
-        },
-        Atributos: {
-            FOR: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            CON: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            DES: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            INT: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            TAM: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            POW: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            APA: { type: Number, default: 1, required: true, min: 1, max: 19 },
-            SOR: { type: Number, default: 1, required: true, min: 1, max: 19 },
         }
+    },
+    Atributos: {
+        FOR: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        CON: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        DES: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        INT: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        TAM: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        POW: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        APA: { type: Number, default: 1, required: true, min: 1, max: 19 },
+        SOR: { type: Number, default: 1, required: true, min: 1, max: 19 },
     },
     Resistências: {
         Perfurante: { type: Number, default: 0, required: true },

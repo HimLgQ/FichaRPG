@@ -3,10 +3,13 @@
     <head>
         <link rel="stylesheet" href="/stylesheets/style.css" />
     </head>
-    <body>
-        <center id="resultadoTexto"></center>
+    <body onload=esconderCoisas()>
         <% players.forEach((player) => { %>
-        <center><%= player.Nome %></center>
+        <div class="nomePlayer"><%= player.Nome %></div>
+        <div class="imgEsqueleto">
+            <img src="images/Esqueleto.png" alt="imgEsqueleto" id="imgEsqueleto">
+        </div>
+        <div class="racaPlayer"><%=player.Raça%></div>
         <div class="grid-container">
             <% Object.entries(player.Perícias).forEach(([classePericia, nomesPericias]) => { %>
             <dl id="<%= classePericia %>" class="classePericia">
@@ -14,19 +17,23 @@
                 <% Object.entries(nomesPericias).forEach(([pericia, valor]) => { %>
                 <dt>
                     <br/>
-                    <button
+                    <button class="down"
+                        id="down<%= pericia%>"
                         onclick='mudarValorPericia(this, "<%= player.Nome %>", "<%= classePericia %>", "<%= pericia %>", -1)'
                     >
                         -
                     </button>
-                    <button
+                    <button class="periciaValue"" id="<%= pericia %>"><%= valor %></button>
+                    <button class="up"
+                        id="up<%= pericia%>"
                         onclick='mudarValorPericia(this, "<%= player.Nome %>", "<%= classePericia %>", "<%= pericia %>", 1)'
                     >
                         +
                     </button>
-                    <p class="periciaValue"" id="<%= pericia %>"><%= valor %></p>
+                    
                     <button
                         onclick="RollD20(this.name)"
+                        class="rolarBotao"
                         name="<%= pericia %>"
                         id="button<%= pericia %>"
                     >
@@ -37,6 +44,12 @@
             </dl>
             <% }); %> <% }); %>
         </div>
+        <div id="containerD20">
+            <img src="images/D20.png" alt="imgD20" id="imgD20">
+            <div class="centered" id="dadoTexto"></div>
+        </div>
+        <div id="resultadoTexto"></div>
+        <script src="javascripts/esconderComeco.js"></script>
         <script src="javascripts/updatePericias.js"></script>
         <script src="javascripts/dadosPericias.js"></script>
         <script src="javascripts/helpers.js"></script>
